@@ -42,6 +42,12 @@ header {
     padding: 20px;
 }
 
+@media screen and  (max-width: 760px) {
+    header {
+        flex-direction: column;
+    }
+}
+
 .flex {
     display: flex;
     align-items: center;
@@ -122,8 +128,23 @@ input[type=text] {
     border-radius: 20px;
     outline: none;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: transparent;
+}
+
+form > div {
+    color: red;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.show-error {
+    display: block;
+}
+
+.remove-error {
+    display: none;
 }
 
 label {
@@ -152,7 +173,7 @@ input[type=checkbox] {
 
 button {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     margin-top: 20px;
     text-align: center;
     font-size: 1.7rem;
@@ -171,17 +192,37 @@ button:hover {
 
 main {
     background-color: var(--blue-clr);
-    height: calc(100vh - 150px) ;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
+    height: calc(100vh - 150px);
+    overflow: scroll;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 20px;
+}
+
+@media screen and  (max-width: 760px) {
+    main > div{
+        justify-self: center;
+    }
 }
 
 main > div {
-    padding: 20px;
+    padding: 30px;
+    width: 350px;
+    height: 350px;
     text-align: center;
     color: var(--dark-font);
-    background-color: white;
+    background-color: var(--light-font);
 }
 
+main > div > p {
+    font-size: 1.3rem;
+    color: var(--dark-font);
+    padding: 10px;
+    font-weight: bold;
+}
+
+main > div > button {
+    font-size: 1.3rem;
+    padding: 10px;
+}
